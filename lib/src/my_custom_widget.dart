@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class MyCustomWidget extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
-  final Color backgroundColor;
+  final Color? backgroundColor;
+  final Color? foregroundColor;
   final double? width;
   final double? height;
 
@@ -11,7 +12,8 @@ class MyCustomWidget extends StatelessWidget {
     Key? key,
     required this.title,
     required this.onPressed,
-    required this.backgroundColor,
+     this.backgroundColor,
+     this.foregroundColor,
     this.width,
     this.height,
   }) : super(key: key);
@@ -24,6 +26,7 @@ class MyCustomWidget extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
+          foregroundColor: foregroundColor
         ),
         onPressed: onPressed,
         child: Text(title),
